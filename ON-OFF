@@ -1,0 +1,38 @@
+% figure(1)
+% yyaxis left
+% 
+% plot(Tiempo(113:end),Temperatura((113:end)))
+% hold on
+% plot(Tiempo(113:end),LimiteInferior((113:end)))
+% hold on
+% plot(Tiempo(113:end),LimiteSuperior((113:end)))
+% yyaxis right
+% plot(Tiempo(113:end),Voltaje(113:end))
+
+close all
+figure(1)
+plot(Temp.time(1:end-20),Temp.data(1:end-20,1))
+hold on
+plot(Linf.time(1:end-20),Linf.data(1:end-20,1))
+hold on
+plot(Lsup.time(1:end-20),Lsup.data(1:end-20,1))
+
+ylabel('Temperatura(°C)')
+xlabel('Tiempo(s)')
+title('Simulación controlador On-Off')
+legend('Temperatura','Límite inferior','Límite Superior')
+
+figure(2)
+plot(control.time(1:end-20),control.data(1:end-20,1))
+
+xlabel('Tiempo(s)')
+ylabel('Señal de control(V)')
+title('Señal de control en simulación')
+% 
+% figure(1)
+% yyaxis left
+% plot(h_1.time, [h_1.signals(1).values])
+% hold on
+% plot(h_2.time, [h_2.signals(1).values])
+% yyaxis right
+% plot(u.time, [u.signals(1).values])
